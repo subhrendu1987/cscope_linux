@@ -1,14 +1,16 @@
-# cscope configure
+# Configure cscope
 
 ## Prerequisties and Assumptions
+* cscope installed 
 * Download Linux kernel from [here](https://www.kernel.org/)
 * Kernel sources directory `/home/subhrendu/linux-5.18.5`
 * cscope config directory `/home/subhrendu/cscope`
 
 ## Start configuration
+Use the following commands to configure cscope
 * `LNX=/home/subhrendu/linux-5.18.5`
 * `CSCOPE_REPO=/home/subhrendu/cscope/`
-* `mkdir CSCOPE_REPO`
+* `mkdir -p $CSCOPE_REPO`
 * `cd /`
 * `find  $LNX                                                                \
 	-path "$LNX/arch/*" ! -path "$LNX/arch/i386*" -prune -o               \
@@ -18,8 +20,9 @@
 	-path "$LNX/scripts*" -prune -o                                       \
 	-path "$LNX/drivers*" -prune -o                                       \
         -name "*.[chxsS]" -print > "$CSCOPE_REPO/cscope.file"`
-
-
+* `cat "$CSCOPE_REPO/cscope.file"`
+* `cd "$CSCOPE_REPO"`
+* `cscope -b -q -k -i cscope.file`
 
 
 ### For other Projects
