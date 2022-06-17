@@ -1,7 +1,7 @@
 # Configure cscope
 
 ## Prerequisties and Assumptions
-* cscope installed 
+* cscope installed `sudo apt install cscope`
 * Download Linux kernel from [here](https://www.kernel.org/)
 * Kernel sources directory `/home/subhrendu/linux-5.18.5`
 * cscope config directory `/home/subhrendu/cscope`
